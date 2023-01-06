@@ -6,6 +6,7 @@ services:
     container_name: rnode
     hostname: rnode
     restart: unless-stopped
+    init: true
     environment:
       ADNL_PORT:
       VALIDATOR_NAME:
