@@ -1,4 +1,4 @@
-ARG RUST_VERSION=1.65.0
+ARG RUST_VERSION=1.70.0
 
 FROM ubuntu:18.04 as build
 
@@ -47,8 +47,9 @@ COPY rust_install.sh /tmp/rust_install.sh
 RUN bash -c "/tmp/rust_install.sh ${RUST_VERSION}"
 
 WORKDIR /tonlabs/ton-node
-RUN #cargo update && cargo build --release --features "metrics,compression"
-RUN cargo update && cargo build --release --features "metrics"
+#RUN #cargo update && cargo build --release --features "metrics,compression"
+#RUN cargo update && cargo build --release --features "metrics"
+RUN cargo update && cargo build --release
 
 WORKDIR /tonlabs/ton-labs-node-tools
 RUN cargo update && cargo build --release
