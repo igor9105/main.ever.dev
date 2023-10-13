@@ -48,8 +48,7 @@ RUN bash -c "/tmp/rust_install.sh ${RUST_VERSION}"
 
 WORKDIR /tonlabs/ton-node
 #RUN #cargo update && cargo build --release --features "metrics,compression"
-#RUN cargo update && cargo build --release --features "metrics"
-RUN cargo update && cargo build --release
+RUN cargo update && cargo build --release --features "statsd"
 
 WORKDIR /tonlabs/ton-labs-node-tools
 RUN cargo update && cargo build --release
