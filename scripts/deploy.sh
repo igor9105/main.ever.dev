@@ -64,7 +64,7 @@ cd "${DOCKER_COMPOSE_DIR}/ton-node/" && docker-compose up -d
 docker ps -a
 docker exec --tty rnode "/ton-node/scripts/generate_console_config.sh"
 sed -i "s|NODE_CMD_1.*|NODE_CMD_1=normal|g" "${DOCKER_COMPOSE_DIR}/ton-node/.env"
-sed -i 's|"low_memory_mode": false,|"low_memory_mode": true,|g' "${DOCKER_COMPOSE_DIR}/ton-node/configs/config.json"
+#sed -i 's|"low_memory_mode": false,|"low_memory_mode": true,|g' "${DOCKER_COMPOSE_DIR}/ton-node/configs/config.json"
 
 cd "${DOCKER_COMPOSE_DIR}/ton-node/" && docker-compose stop
 cd "${DOCKER_COMPOSE_DIR}/ton-node/" && docker-compose up -d
