@@ -20,7 +20,7 @@ export TON_NODE_GITHUB_REPO="https://github.com/tonlabs/ton-labs-node.git"
 export TON_NODE_GITHUB_COMMIT_ID="286132d4a22782fd67756fb39cb81b272be9681d"
 
 export TON_NODE_TOOLS_GITHUB_REPO="https://github.com/tonlabs/ton-labs-node-tools.git"
-export TON_NODE_TOOLS_GITHUB_COMMIT_ID="master"
+#export TON_NODE_TOOLS_GITHUB_COMMIT_ID="master"
 export TON_NODE_TOOLS_GITHUB_COMMIT_ID="7472f5452a0c1713c2496402a44cfaab77b76a1c"
 
 export TONOS_CLI_GITHUB_REPO="https://github.com/tonlabs/tonos-cli.git"
