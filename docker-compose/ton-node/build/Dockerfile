@@ -15,10 +15,7 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 
 RUN apt-get update && apt-get install -y curl gnupg2 && ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-RUN echo "deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse" >> /etc/apt/sources.list;\
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 871920D1991BC93C;\
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 3B4FE6ACC0B21F32;\
-    apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y \
     gpg \
     tar \
     cmake \
@@ -36,9 +33,7 @@ RUN echo "deb [arch=amd64] http://archive.ubuntu.com/ubuntu/ focal main restrict
 ENV ZSTD_LIB_DIR=/usr/lib/x86_64-linux-gnu
 
 # rdkafka from confluent's repo
-RUN curl https://packages.confluent.io/deb/5.5/archive.key | apt-key add;\
-    echo "deb [arch=amd64] https://packages.confluent.io/deb/5.5 stable main" >> /etc/apt/sources.list;\
-    apt-get update;\
+RUN apt-get update;\
     apt-get install -y librdkafka-dev;
 
 # Get Rust
